@@ -1,0 +1,407 @@
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:          #0f1117;
+  --surface:     #1a1d27;
+  --surface-2:   #22263a;
+  --border:      rgba(255,255,255,0.07);
+  --gold:        #c9a74d;
+  --gold-muted:  rgba(201,167,77,0.15);
+  --text-primary:   #f0ede4;
+  --text-secondary: rgba(240,237,228,0.55);
+  --text-muted:     rgba(240,237,228,0.35);
+  --accent:      #e05c38;        /* warm terracotta — jollof red */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --transition:  0.22s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  /* background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%,
+      rgba(201,167,77,0.06) 0%, transparent 60%); */
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 92%;
+  max-width: 965px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 60px 0 48px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-sm-caption {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 360px;
+}
+
+.hero-image img {
+  width: 100%;
+  /* aspect-ratio: 4/3; */
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  /* border: 1px solid var(--border); */
+  /* filter: brightness(0.92) saturate(1.1);
+  transition: transform var(--transition), filter var(--transition); */
+  /* display: block; */
+}
+
+/* .hero-image img:hover {
+  transform: scale(1.02);
+  filter: brightness(1) saturate(1.15);
+} */
+
+/* Details */
+.details-strip {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 20px 28px;
+  margin-bottom: 28px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* center */
+  gap: 4px;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.badge {
+  background: var(--gold-muted);
+  color: var(--gold);
+  font-size: 11px ;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 3px 12px;
+  border-radius: 40px;
+  border: 0.5px solid rgba(201,167,77,0.3);
+}
+
+.detail-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* Main Grid */ 
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  /* transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); */
+}
+
+/* .card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,167,77,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+} */
+
+/* Accent card (Tips) — slightly warmer */
+/* .card-accent {
+  background: linear-gradient(135deg, var(--surface) 0%, #211a14 100%);
+  border-color: rgba(201,167,77,0.15);
+} */
+
+.card-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gold);
+}
+
+.card-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.per-serving {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  margin-left: 6px;
+}
+
+/* INgredients */
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredient-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+.ingredient-list li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 10px;
+  top: 3px;
+}
+
+.ingredient-list li:hover {
+  color: var(--text-primary);
+}
+
+/* INstructions */
+.instruction-list {
+  padding: 0;
+  counter-reset: step-counter;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.instruction-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 38px;
+  position: relative;
+  counter-increment: step-counter;
+  transition: color var(--transition);
+}
+
+.instruction-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--gold-muted);
+  border: 0.5px solid rgba(201,167,77,0.25);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.instruction-list li:hover {
+  color: var(--text-primary);
+}
+
+.instruction-list strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Tips */
+.tip-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tip-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 22px;
+  position: relative;
+}
+
+.tip-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 8px;
+  top: 5px;
+}
+
+.tip-list em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Nutrition */
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.nut-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.nut-item:hover {
+  border-color: rgba(201,167,77,0.25);
+  transform: translateY(-2px);
+}
+
+.nut-item strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.nut-item span {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Source */
+.source-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 16px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.source-bar a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: color var(--transition), letter-spacing var(--transition);
+}
+
+.source-bar a:hover {
+  color: #e0bf72;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    gap: 28px;
+    padding: 40px 0 32px;
+  }
+  .hero-desc { max-width: 100%; }
+  .grid-layout { grid-template-columns: 1fr; }
+  .details-strip { flex-wrap: wrap; gap: 16px; }
+  .detail-divider { display: none; }
+  .nutrition-grid { grid-template-columns: repeat(2, 1fr); }
+}
